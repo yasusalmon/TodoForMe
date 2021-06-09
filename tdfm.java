@@ -16,10 +16,13 @@ public class tdfm extends JFrame{
     tdfm frame = new tdfm();
     Container cont = frame.getContentPane();
     JPanel panel = new JPanel();
-    JLabel label = new JLabel("moji!!");
-    label.setFont(new Font("Arial",Font.PLAIN,24));
+    JLabel label = new JLabel("TodoForMe!!");
+    label.setFont(new Font("Arial",Font.PLAIN,48));
     label.setForeground(Color.RED);
     panel.add(label);
+    JButton button = new JButton("yeah!!");
+    panel.add(button);
+
     cont.add(panel,BorderLayout.CENTER);
     frame.setVisible(true);
   }
