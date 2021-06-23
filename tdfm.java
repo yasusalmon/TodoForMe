@@ -8,16 +8,18 @@ public class tdfm extends JFrame implements ActionListener{
   public static void main(String[] args){
     System.out.println(" Let's start TdFM!! ");
     tdfm frame = new tdfm();
-
     frame.setVisible(true);
   }
 
-  int i = 4;
+  int i = 0;
 
   JLayeredPane panel = new JLayeredPane();
   JLabel label = new JLabel("TodoForMe!!");
   JButton button1 = new JButton("yeah!!");
   JButton button2 = new JButton("yeah2!!");
+  JLabel TodoImage[] = new JLabel[1000000];
+  ImageIcon todoback = new ImageIcon("./TodoBGP_x300y45.png");
+  ImageIcon todoinput = new ImageIcon("./TodoBGP_x300y65.png");
   JButton button[] = new JButton[1000000];
 
   public tdfm(){
@@ -38,8 +40,8 @@ public class tdfm extends JFrame implements ActionListener{
     label.setBounds(0,-140,300,320);
     panel.add(label);
 
-    button1.setBounds(300,50,150,50);
-    button2.setBounds(50,300,150,64);
+    button1.setBounds(300,55,150,50);
+    button2.setBounds(20,300,75,30);
     button1.addActionListener(this);
     button2.addActionListener(this);
     panel.add(button1);
@@ -49,37 +51,49 @@ public class tdfm extends JFrame implements ActionListener{
 
     //kokokarasaki ittann karioki
     //kannsei sakuhinn deha data ha textfile de kannri suru yotei
-    button[0] = new JButton("1kome");
-    button[1] = new JButton("2kome");
-    button[2] = new JButton("3kome");
-    button[3] = new JButton("4kome");
-    button[0].setBounds(300,150,150,32);
-    panel.add(button[0]);
-    button[1].setBounds(300,200,150,32);
-    panel.add(button[1]);
-    button[2].setBounds(300,250,150,32);
-    panel.add(button[2]);
-    button[3].setBounds(300,300,150,32);
-    panel.add(button[3]);
+    // button[0] = new JButton("1");
+    // button[1] = new JButton("2");
+    // button[2] = new JButton("3");
+    // button[3] = new JButton("‚ ‚ ‚ ‚ ");
+    // button[0].setBounds(300,150,150,32);
+    // panel.add(button[0]);
+    // button[1].setBounds(300,200,150,32);
+    // panel.add(button[1]);
+    // button[2].setBounds(300,250,150,32);
+    // panel.add(button[2]);
+    // button[3].setBounds(300,300,150,32);
+    // panel.add(button[3]);
+
+    //input no ryouiki
+    TodoImage[999999] = new JLabel(todoinput);
+    TodoImage[999999].setBounds(175,50,300,65);
+    panel.add(TodoImage[999999]);
+
+    //todo no ryouiki
+    // TodoImage[0] = new JLabel(todoback);
+    // TodoImage[0].setBounds(175,120,300,45);
+    // panel.add(TodoImage[0]);
   }
 
   public void actionPerformed(ActionEvent e){
     System.out.println("you push a button.");
     if(e.getSource() == button1){
       button[i] = new JButton("uouo");
-      button[i].setBounds(300,150+(i*50),150,32);
+      button[i].setBounds(340,140+(i*50),100,30);
       panel.add(button[i]);
+      TodoImage[i] = new JLabel(todoback);
+      TodoImage[i].setBounds(175,80+(i*50),300,150);
+      panel.add(TodoImage[i]);
       i++;
     }else if(e.getSource() == button2){
       button[i] = new JButton("ieie");
-      button[i].setBounds(300,150+(i*50),150,32);
+      button[i].setBounds(340,140+(i*50),100,30);
       panel.add(button[i]);
+      TodoImage[i] = new JLabel(todoback);
+      TodoImage[i].setBounds(175,80+(i*50),300,150);
+      panel.add(TodoImage[i]);
       i++;
     }
-  }
-
-  public void AddTodo(tdfm frame){
-
   }
 
 }
