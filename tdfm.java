@@ -2,6 +2,10 @@ import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class tdfm extends JFrame implements ActionListener{
 
@@ -9,6 +13,21 @@ public class tdfm extends JFrame implements ActionListener{
     System.out.println(" Let's start TdFM!! ");
     tdfm frame = new tdfm();
     frame.setVisible(true);
+    try{
+      File file = new File("./list.txt");
+      FileReader fr = new FileReader(file);
+
+      int ch;
+      while((ch=fr.read()) != -1){
+        System.out.println((char)ch);;
+      }
+
+      fr.close();
+    }catch(FileNotFoundException e){
+      System.out.println(e);
+    }catch(IOException e){
+      System.out.println(e);
+    }
   }
 
   int i = 0;
