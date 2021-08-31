@@ -60,7 +60,7 @@ public class tdfm extends JFrame implements ActionListener{
     panel.add(label);
 
     button1.setBounds(300,55,150,50);
-    button2.setBounds(20,300,75,30);
+    button2.setBounds(20,300,150,30);
     button1.addActionListener(this);
     button2.addActionListener(this);
     panel.add(button1);
@@ -85,7 +85,7 @@ public class tdfm extends JFrame implements ActionListener{
 
     //input no ryouiki
     TodoImage[999999] = new JLabel(todoinput);
-    TodoImage[999999].setBounds(175,50,300,65);
+    TodoImage[999999].setBounds(175,45,300,65);
     panel.add(TodoImage[999999]);
 
     //todo no ryouiki
@@ -98,18 +98,18 @@ public class tdfm extends JFrame implements ActionListener{
     System.out.println("you push a button.");
     if(e.getSource() == button1){
       button[i] = new JButton("uouo");
-      button[i].setBounds(340,140+(i*50),100,30);
+      button[i].setBounds(340,170+(i*50),100,30);
       panel.add(button[i]);
       TodoImage[i] = new JLabel(todoback);
-      TodoImage[i].setBounds(175,80+(i*50),300,150);
+      TodoImage[i].setBounds(175,110+(i*50),300,150);
       panel.add(TodoImage[i]);
       i++;
     }else if(e.getSource() == button2){
       button[i] = new JButton("ieie");
-      button[i].setBounds(340,140+(i*50),100,30);
+      button[i].setBounds(340,170+(i*50),100,30);
       panel.add(button[i]);
       TodoImage[i] = new JLabel(todoback);
-      TodoImage[i].setBounds(175,80+(i*50),300,150);
+      TodoImage[i].setBounds(175,110+(i*50),300,150);
       panel.add(TodoImage[i]);
       i++;
     }
