@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -14,15 +15,20 @@ public class tdfm extends JFrame implements ActionListener{
     tdfm frame = new tdfm();
     frame.setVisible(true);
     try{
-      File file = new File("./list.txt");
+      File file = new File("list.txt");
       FileReader fr = new FileReader(file);
+      BufferedReader br = new BufferedReader(fr);
 
-      int ch;
-      while((ch=fr.read()) != -1){
-        System.out.println((char)ch);;
+      String slist;
+      while((slist = br.readLine()) != null){
+        System.out.println(slist);
+        String[] split_text = slist.split(",",0);
+        for(String elem : split_text){
+          System.out.println(elem);
+        }
       }
 
-      fr.close();
+      br.close();
     }catch(FileNotFoundException e){
       System.out.println(e);
     }catch(IOException e){
@@ -73,7 +79,7 @@ public class tdfm extends JFrame implements ActionListener{
     // button[0] = new JButton("1");
     // button[1] = new JButton("2");
     // button[2] = new JButton("3");
-    // button[3] = new JButton("Ç†Ç†Ç†Ç†");
+    // button[3] = new JButton("„ÅÇ„ÅÇ„ÅÇ„ÅÇ");
     // button[0].setBounds(300,150,150,32);
     // panel.add(button[0]);
     // button[1].setBounds(300,200,150,32);
