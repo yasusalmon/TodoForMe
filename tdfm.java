@@ -14,26 +14,7 @@ public class tdfm extends JFrame implements ActionListener{
     System.out.println(" Let's start TdFM!! ");
     tdfm frame = new tdfm();
     frame.setVisible(true);
-    try{
-      File file = new File("list.txt");
-      FileReader fr = new FileReader(file);
-      BufferedReader br = new BufferedReader(fr);
 
-      String slist;
-      while((slist = br.readLine()) != null){
-        System.out.println(slist);
-        String[] split_text = slist.split(",",0);
-        for(String elem : split_text){
-          System.out.println(elem);
-        }
-      }
-
-      br.close();
-    }catch(FileNotFoundException e){
-      System.out.println(e);
-    }catch(IOException e){
-      System.out.println(e);
-    }
   }
 
   int i = 0;
@@ -94,6 +75,27 @@ public class tdfm extends JFrame implements ActionListener{
     TodoImage[999999].setBounds(175,45,300,65);
     panel.add(TodoImage[999999]);
 
+    try{
+      File file = new File("list.txt");
+      FileReader fr = new FileReader(file);
+      BufferedReader br = new BufferedReader(fr);
+
+      String slist;
+      while((slist = br.readLine()) != null){
+        System.out.println(slist);
+        System.out.println("1111");
+        String[] split_text = slist.split(",",0);
+        for(String elem : split_text){
+          System.out.println(elem);
+        }
+      }
+      br.close();
+    }catch(FileNotFoundException e){
+      System.out.println(e);
+    }catch(IOException e){
+      System.out.println(e);
+    }
+
     //todo no ryouiki
     // TodoImage[0] = new JLabel(todoback);
     // TodoImage[0].setBounds(175,120,300,45);
@@ -102,7 +104,9 @@ public class tdfm extends JFrame implements ActionListener{
 
   public void actionPerformed(ActionEvent e){
     System.out.println("you push a button.");
-    if(e.getSource() == button1){
+    if(i > 6){
+
+    }else if(e.getSource() == button1){
       button[i] = new JButton("uouo");
       button[i].setBounds(340,170+(i*50),100,30);
       panel.add(button[i]);
