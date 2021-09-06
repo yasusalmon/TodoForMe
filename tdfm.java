@@ -17,13 +17,16 @@ public class tdfm extends JFrame implements ActionListener{
 
   }
 
-  int i = 0;
+  int iii = 0;
+  int subject = 0;
+  int page = 0;
 
   JLayeredPane panel = new JLayeredPane();
-  JLabel label = new JLabel("TodoForMe!!");
-  JButton button1 = new JButton("yeah!!");
+  JLabel title_name = new JLabel("TodoForMe!!");
+  JButton button1 = new JButton("‚ yeah!!");
   JButton button2 = new JButton("yeah2!!");
   JLabel TodoImage[] = new JLabel[1000000];
+  JLabel TodoText[] = new JLabel[1000000];
   ImageIcon todoback = new ImageIcon("./TodoBGP_x300y45.png");
   ImageIcon todoinput = new ImageIcon("./TodoBGP_x300y65.png");
   JButton button[] = new JButton[1000000];
@@ -39,12 +42,12 @@ public class tdfm extends JFrame implements ActionListener{
     panel.setLayout(null);//jidou layout wo off ni siteiru
     panel.setBackground(Color.WHITE);//haikei color
 
-    label.setFont(new Font("Arial",Font.PLAIN,32));
-    //label.setForeground(Color.RED);
-    label.setForeground(new Color (200,200,0));
-    //label.setHorizontalAlignment(JLabel.CENTER);
-    label.setBounds(0,-140,300,320);
-    panel.add(label);
+    title_name.setFont(new Font("Arial",Font.PLAIN,32));
+    title_name.setForeground(new Color (200,200,0));
+    //title_name.setForeground(Color.RED);
+    //title_name.setHorizontalAlignment(JLabel.CENTER);
+    title_name.setBounds(0,-140,300,320);
+    panel.add(title_name);
 
     button1.setBounds(300,55,150,50);
     button2.setBounds(20,300,150,30);
@@ -81,10 +84,15 @@ public class tdfm extends JFrame implements ActionListener{
       BufferedReader br = new BufferedReader(fr);
 
       String slist;
+      int i = 0;
       while((slist = br.readLine()) != null){
-        System.out.println(slist);
-        System.out.println("1111");
         String[] split_text = slist.split(",",0);
+        //TodoText[1].setText("split_text[1]");
+        if(TodoText[1] == null){
+          System.out.println("null ‚â‚Å");
+          System.exit(0);
+        }
+        TodoText[1].setBackground(Color.ORANGE);
         for(String elem : split_text){
           System.out.println(elem);
         }
@@ -104,24 +112,27 @@ public class tdfm extends JFrame implements ActionListener{
 
   public void actionPerformed(ActionEvent e){
     System.out.println("you push a button.");
-    if(i > 6){
+    if(iii > 6){
 
     }else if(e.getSource() == button1){
-      button[i] = new JButton("uouo");
-      button[i].setBounds(340,170+(i*50),100,30);
-      panel.add(button[i]);
-      TodoImage[i] = new JLabel(todoback);
-      TodoImage[i].setBounds(175,110+(i*50),300,150);
-      panel.add(TodoImage[i]);
-      i++;
+      button[iii] = new JButton("uouo");
+      button[iii].setBounds(340,170+(iii*50),100,30);
+      panel.add(button[iii]);
+      TodoImage[iii] = new JLabel(todoback);
+      TodoImage[iii].setBounds(175,110+(iii*50),300,150);
+      panel.add(TodoImage[iii]);
+      iii++;
+      TodoText[iii].setForeground(new Color (200,200,0));
+      TodoText[iii].setBounds(0,-140,300,320);
+      panel.add(TodoText[iii]);
     }else if(e.getSource() == button2){
-      button[i] = new JButton("ieie");
-      button[i].setBounds(340,170+(i*50),100,30);
-      panel.add(button[i]);
-      TodoImage[i] = new JLabel(todoback);
-      TodoImage[i].setBounds(175,110+(i*50),300,150);
-      panel.add(TodoImage[i]);
-      i++;
+      button[iii] = new JButton("ieie");
+      button[iii].setBounds(340,170+(iii*50),100,30);
+      panel.add(button[iii]);
+      TodoImage[iii] = new JLabel(todoback);
+      TodoImage[iii].setBounds(175,110+(iii*50),300,150);
+      panel.add(TodoImage[iii]);
+      iii++;
     }
   }
 
