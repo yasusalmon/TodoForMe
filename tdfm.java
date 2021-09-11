@@ -58,21 +58,6 @@ public class tdfm extends JFrame implements ActionListener{
 
     cont.add(panel,BorderLayout.CENTER);
 
-    //kokokarasaki ittann karioki
-    //kannsei sakuhinn deha data ha textfile de kannri suru yotei
-    // button[0] = new JButton("1");
-    // button[1] = new JButton("2");
-    // button[2] = new JButton("3");
-    // button[3] = new JButton("„ÅÇ„ÅÇ„ÅÇ„ÅÇ");
-    // button[0].setBounds(300,150,150,32);
-    // panel.add(button[0]);
-    // button[1].setBounds(300,200,150,32);
-    // panel.add(button[1]);
-    // button[2].setBounds(300,250,150,32);
-    // panel.add(button[2]);
-    // button[3].setBounds(300,300,150,32);
-    // panel.add(button[3]);
-
     //input no ryouiki
     TodoImage[999999] = new JLabel(todoinput);
     TodoImage[999999].setBounds(175,45,300,65);
@@ -84,17 +69,19 @@ public class tdfm extends JFrame implements ActionListener{
       BufferedReader br = new BufferedReader(fr);
 
       String slist;
-      int i = 0;
       while((slist = br.readLine()) != null){
         String[] split_text = slist.split(",",0);
-        //TodoText[1].setText("split_text[1]");
-        if(TodoText[1] == null){
-          System.out.println("null Ç‚Ç≈");
-          System.exit(0);
-        }
-        TodoText[1].setBackground(Color.ORANGE);
+        int i = 0;
         for(String elem : split_text){
           System.out.println(elem);
+          TodoText[i] = new JLabel();
+          TodoText[i].setText(elem);
+          TodoText[i].setBackground(Color.ORANGE);
+          if(TodoText[i] == null){
+            System.out.println("null Ç‚Ç≈");
+            System.exit(0);
+          }
+          i++;
         }
       }
       br.close();
@@ -103,11 +90,6 @@ public class tdfm extends JFrame implements ActionListener{
     }catch(IOException e){
       System.out.println(e);
     }
-
-    //todo no ryouiki
-    // TodoImage[0] = new JLabel(todoback);
-    // TodoImage[0].setBounds(175,120,300,45);
-    // panel.add(TodoImage[0]);
   }
 
   public void actionPerformed(ActionEvent e){
