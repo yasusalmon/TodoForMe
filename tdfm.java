@@ -71,17 +71,19 @@ public class tdfm extends JFrame implements ActionListener{
       String slist;
       while((slist = br.readLine()) != null){
         String[] split_text = slist.split(",",0);
-        int i = 0;
+        int isp = 0;
         for(String elem : split_text){
           System.out.println(elem);
-          TodoText[i] = new JLabel();
-          TodoText[i].setText(elem);
-          TodoText[i].setBackground(Color.ORANGE);
-          if(TodoText[i] == null){
+          TodoText[isp] = new JLabel();
+          TodoText[isp].setText(elem);
+          TodoText[isp].setBackground(Color.ORANGE);
+          TodoText[isp].setBounds(340,170+(isp*50),100,30);
+          panel.add(TodoText[isp]);
+          if(TodoText[isp] == null){
             System.out.println("null ‚â‚Å");
             System.exit(0);
           }
-          i++;
+          isp++;
         }
       }
       br.close();
@@ -104,9 +106,6 @@ public class tdfm extends JFrame implements ActionListener{
       TodoImage[iii].setBounds(175,110+(iii*50),300,150);
       panel.add(TodoImage[iii]);
       iii++;
-      TodoText[iii].setForeground(new Color (200,200,0));
-      TodoText[iii].setBounds(0,-140,300,320);
-      panel.add(TodoText[iii]);
     }else if(e.getSource() == button2){
       button[iii] = new JButton("ieie");
       button[iii].setBounds(340,170+(iii*50),100,30);
