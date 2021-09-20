@@ -8,6 +8,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
 public class tdfm extends JFrame implements ActionListener{
 
   public static void main(String[] args){
@@ -23,7 +26,7 @@ public class tdfm extends JFrame implements ActionListener{
 
   JLayeredPane panel = new JLayeredPane();
   JLabel title_name = new JLabel("TodoForMe!!");
-  JButton button1 = new JButton("Ç†yeah!!");
+  JButton button1 = new JButton("„ÅÇ„ÅÇyeah!!");
   JButton button2 = new JButton("yeah2!!");
   JLabel TodoImage[] = new JLabel[1000000];
   JLabel TodoText[] = new JLabel[1000000];
@@ -65,8 +68,7 @@ public class tdfm extends JFrame implements ActionListener{
 
     try{
       File file = new File("list.txt");
-      FileReader fr = new FileReader(file);
-      BufferedReader br = new BufferedReader(fr);
+      BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 
       String slist;
       while((slist = br.readLine()) != null){
@@ -80,7 +82,7 @@ public class tdfm extends JFrame implements ActionListener{
           TodoText[isp].setBounds(340,170+(isp*50),100,30);
           panel.add(TodoText[isp]);
           if(TodoText[isp] == null){
-            System.out.println("null Ç‚Ç≈");
+            System.out.println("null");
             System.exit(0);
           }
           isp++;
