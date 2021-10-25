@@ -1,1 +1,1 @@
-あああtodo_first,todo_second,aaaaa,サンプル,さんぷる,サンチュ,産休,そろそろ再開しないとね
+ああtodo_first,todo_second,aaaaa,サンプル,さんぷる,サンチュ,産休,そろそろ再開しないとね
