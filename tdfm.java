@@ -26,7 +26,7 @@ public class tdfm extends JFrame implements ActionListener{
 
   JLayeredPane panel = new JLayeredPane();
   JLabel title_name = new JLabel("TodoForMe!!");
-  JButton button1 = new JButton("ああyeah!!");
+  JButton button1 = new JButton("あああyeah!!");
   JButton button2 = new JButton("yeah2!!");
   JLabel TodoImage[] = new JLabel[1000000];
   JLabel TodoText[] = new JLabel[1000000];
@@ -109,7 +109,7 @@ public class tdfm extends JFrame implements ActionListener{
       panel.add(TodoImage[iii]);
       iii++;
     }else if(e.getSource() == button2){
-      button[iii] = new JButton("ieie");
+      button[iii] = new JButton("ieieo");
       button[iii].setBounds(340,170+(iii*50),100,30);
       panel.add(button[iii]);
       TodoImage[iii] = new JLabel(todoback);
