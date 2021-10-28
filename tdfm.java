@@ -75,12 +75,28 @@ public class tdfm extends JFrame implements ActionListener{
         String[] split_text = slist.split(",",0);
         int isp = 0;
         for(String elem : split_text){
+          if(iii > 5){
+
+          }else{
+            button[iii] = new JButton("uouo");
+            button[iii].setBounds(340,170+(iii*50),100,30);
+            panel.add(button[iii]);
+            panel.setLayer(button[iii],0);
+            TodoImage[iii] = new JLabel(todoback);
+            TodoImage[iii].setBounds(175,110+(iii*50),300,150);
+            panel.setLayer(TodoImage[iii],-1);
+            panel.add(TodoImage[iii]);
+
+            iii++;
+          }
+
           System.out.println(elem);
           TodoText[isp] = new JLabel();
           TodoText[isp].setText(elem);
           TodoText[isp].setBackground(Color.ORANGE);
-          TodoText[isp].setBounds(340,170+(isp*50),100,30);
+          TodoText[isp].setBounds(220,170+(isp*50),100,30);
           panel.add(TodoText[isp]);
+          panel.setLayer(TodoText[isp],1);
           if(TodoText[isp] == null){
             System.out.println("null");
             System.exit(0);
