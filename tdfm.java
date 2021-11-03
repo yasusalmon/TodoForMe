@@ -15,9 +15,12 @@ public class tdfm extends JFrame implements ActionListener{
 
   public static void main(String[] args){
     System.out.println(" Let's start TdFM!! ");
+    todopane();
+  }
+
+  public static void todopane(){
     tdfm frame = new tdfm();
     frame.setVisible(true);
-
   }
 
   int iii = 0;
@@ -26,7 +29,7 @@ public class tdfm extends JFrame implements ActionListener{
 
   JLayeredPane panel = new JLayeredPane();
   JLabel title_name = new JLabel("TodoForMe!!");
-  JButton button1 = new JButton("あああyeah!!");
+  JButton button1 = new JButton("yeah!!");
   JButton button2 = new JButton("yeah2!!");
   JLabel TodoImage[] = new JLabel[1000000];
   JLabel TodoText[] = new JLabel[1000000];
@@ -71,11 +74,17 @@ public class tdfm extends JFrame implements ActionListener{
       BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 
       String slist;
+      int subline = 0;
       while((slist = br.readLine()) != null){
+        if(subline != subject){
+          subline++;
+          continue;
+        }
+        subline++;
         String[] split_text = slist.split(",",0);
         int isp = 0;
         for(String elem : split_text){
-          if(iii > 5){
+          if(iii > 3){
 
           }else{
             button[iii] = new JButton("uouo");
@@ -86,7 +95,6 @@ public class tdfm extends JFrame implements ActionListener{
             TodoImage[iii].setBounds(175,110+(iii*50),300,150);
             panel.setLayer(TodoImage[iii],-1);
             panel.add(TodoImage[iii]);
-
             iii++;
           }
 
@@ -125,13 +133,8 @@ public class tdfm extends JFrame implements ActionListener{
       panel.add(TodoImage[iii]);
       iii++;
     }else if(e.getSource() == button2){
-      button[iii] = new JButton("ieieo");
-      button[iii].setBounds(340,170+(iii*50),100,30);
-      panel.add(button[iii]);
-      TodoImage[iii] = new JLabel(todoback);
-      TodoImage[iii].setBounds(175,110+(iii*50),300,150);
-      panel.add(TodoImage[iii]);
-      iii++;
+      subject++;
+      todopane();
     }
   }
 
