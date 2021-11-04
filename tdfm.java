@@ -122,7 +122,10 @@ public class tdfm extends JFrame implements ActionListener{
 
   public void actionPerformed(ActionEvent e){
     System.out.println("you push a button.");
-    if(iii > 6){
+    if(e.getSource() == button2){
+      subject++;
+      todopane();
+    }else if(iii > 6){
 
     }else if(e.getSource() == button1){
       button[iii] = new JButton("uouo");
@@ -132,9 +135,6 @@ public class tdfm extends JFrame implements ActionListener{
       TodoImage[iii].setBounds(175,110+(iii*50),300,150);
       panel.add(TodoImage[iii]);
       iii++;
-    }else if(e.getSource() == button2){
-      subject++;
-      todopane();
     }
   }
 
