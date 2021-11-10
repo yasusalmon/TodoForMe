@@ -29,7 +29,7 @@ public class tdfm extends JFrame implements ActionListener{
 
   JLayeredPane panel = new JLayeredPane();
   JLabel title_name = new JLabel("TodoForMe!!");
-  JButton button1 = new JButton("yeah!!");
+  JButton button1 = new JButton("yeah!!!");
   JButton button2 = new JButton("yeah2!!");
   JLabel TodoImage[] = new JLabel[1000000];
   JLabel TodoText[] = new JLabel[1000000];
