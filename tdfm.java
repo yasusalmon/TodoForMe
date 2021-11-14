@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 public class tdfm extends JFrame implements ActionListener{
 
   public static void main(String[] args){
-    System.out.println(" Let's start TdFM!!");
+    System.out.println("  Let's start TdFM!!");
     todopane();
   }
 
