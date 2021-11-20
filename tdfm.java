@@ -5,6 +5,8 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -136,6 +138,19 @@ public class tdfm extends JFrame implements ActionListener{
       TodoImage[iii].setBounds(175,110+(iii*50),300,150);
       panel.add(TodoImage[iii]);
       iii++;
+
+      try{
+        File file = new File("list.txt");
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
+        bw.write("aa");
+        bw.write(",");
+        bw.write("らっきょ");
+        bw.write(",");
+        bw.close();
+      }catch(IOException ee){
+        System.out.println(ee);
+      }
     }
   }
 
