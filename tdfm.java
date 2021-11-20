@@ -30,7 +30,7 @@ public class tdfm extends JFrame implements ActionListener{
   JLayeredPane panel = new JLayeredPane();
   JLabel title_name = new JLabel("TodoForMe!!");
   JButton button1 = new JButton("yeah!!!");
-  JButton button2 = new JButton("yeah2!!");
+  JButton button2 = new JButton("reLoad");
   JLabel TodoImage[] = new JLabel[1000000];
   JLabel TodoText[] = new JLabel[1000000];
   ImageIcon todoback = new ImageIcon("./TodoBGP_x300y45.png");
@@ -42,7 +42,7 @@ public class tdfm extends JFrame implements ActionListener{
     this.setSize(500,600);
     //this.setResizable(false);size no kotei ha sinai. demo dottidemo ii.
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setLocation(770,30);//migiue ni kuruyou ni sitearu
+    this.setLocation(70,30);//migiue ni kuruyou ni sitearu
     Container cont = this.getContentPane();
 
     panel.setLayout(null);//jidou layout wo off ni siteiru
@@ -124,6 +124,7 @@ public class tdfm extends JFrame implements ActionListener{
     System.out.println("you push a button.");
     if(e.getSource() == button2){
       subject++;
+      this.setVisible(false);
       todopane();
     }else if(iii > 6){
 
