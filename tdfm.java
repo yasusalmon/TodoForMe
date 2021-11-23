@@ -30,7 +30,7 @@ public class tdfm extends JFrame implements ActionListener{
   int page = 0;
 
   JLayeredPane panel = new JLayeredPane();
-  JLabel title_name = new JLabel("TodoForMe!!");
+  JLabel title_name = new JLabel("TodoForMe!! ");
   JButton button1 = new JButton("yeah!!!");
   JButton button2 = new JButton("reLoad");
   JLabel TodoImage[] = new JLabel[1000000];
