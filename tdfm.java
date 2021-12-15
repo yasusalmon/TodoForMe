@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 public class tdfm extends JFrame implements ActionListener{
 
   public static void main(String[] args){
-    System.out.println("  Let's start TdFM!!");
+    System.out.println("Let's start TdFM!!");
     todopane();
   }
 
@@ -46,9 +46,10 @@ public class tdfm extends JFrame implements ActionListener{
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setLocation(70,30);//migiue ni kuruyou ni sitearu
     Container cont = this.getContentPane();
+    cont.add(panel,BorderLayout.CENTER);
 
-    panel.setLayout(null);//jidou layout wo off ni siteiru
-    panel.setBackground(Color.WHITE);//haikei color
+    //panel.setLayout(null);//jidou layout wo off ni siteiru
+    //panel.setBackground(Color.RED);//haikei color
 
     title_name.setFont(new Font("Arial",Font.PLAIN,32));
     title_name.setForeground(new Color (200,200,0));
@@ -64,9 +65,14 @@ public class tdfm extends JFrame implements ActionListener{
     panel.add(button1);
     panel.add(button2);
 
-    cont.add(panel,BorderLayout.CENTER);
+
 
     //input no ryouiki
+    JTextArea inputwords = new JTextArea();
+    inputwords.setColumns(30);
+    inputwords.setRows(2);
+    panel.add(inputwords);
+
     TodoImage[999999] = new JLabel(todoinput);
     TodoImage[999999].setBounds(175,45,300,65);
     panel.add(TodoImage[999999]);
